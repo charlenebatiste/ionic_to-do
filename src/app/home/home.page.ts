@@ -6,7 +6,36 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  todoList = [
+    {
+      itemName: 'Coding',
+      itemDueDate: '01-13-21',
+      itemPriority: 'high',
+      itemCategory: 'Work',
+    },
+    {
+      itemName: 'Design',
+      itemDueDate: '02-17-21',
+      itemPriority: 'low',
+      itemCategory: 'Work',
+    },
+    {
+      itemName: 'Shopping',
+      itemDueDate: '01-02-21',
+      itemPriority: 'medium',
+      itemCategory: 'Personal',
+    },
+    {
+      itemName: 'Workout',
+      itemDueDate: '01-22-2021',
+      itemPriority: 'high',
+      itemCategory: 'Personal',
+    },
+  ];
+
+  //   to use a date pipe , dates must be DD/MM/YR or DD/MM/YYYY
+
+  today: number = Date.now();
 
   constructor() {}
-
 }
