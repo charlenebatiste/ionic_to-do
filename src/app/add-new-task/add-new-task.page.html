@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Add New Todo</ion-title>
+    <ion-title style="font-family: 'Bona Nova', serif">Add New Todo</ion-title>
     <ion-icon
       name="close"
       slot="end"
@@ -39,15 +39,20 @@
     <ion-item>
       <ion-icon name="pricetag-outline" slot="start"></ion-icon>
       <ion-label>Category</ion-label>
-      <span [(ngModel)]="taskCategory"></span>
+      <span>{{taskCategory}}</span>
     </ion-item>
 
     <ion-item>
-      <ion-chip *ngFor="let category of categories">
+      <ion-chip
+        *ngFor="let category of categories; let i = index"
+        (click)="selectedCategory(i)"
+      >
         <ion-label>{{ category }}</ion-label>
       </ion-chip>
     </ion-item>
 
-    <ion-button class="ion-margin" expand="block">Add</ion-button>
+    <ion-button class="ion-margin" expand="block" (click)="AddTask()"
+      >Add</ion-button
+    >
   </ion-card>
 </ion-content>

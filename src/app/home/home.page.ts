@@ -10,28 +10,10 @@ import { AddNewTaskPage } from '../add-new-task/add-new-task.page';
 export class HomePage {
   todoList = [
     {
-      itemName: 'Coding',
-      itemDueDate: '01-13-21',
+      itemName: 'Find a Job',
+      itemDueDate: '08-31-21',
       itemPriority: 'high',
       itemCategory: 'Work',
-    },
-    {
-      itemName: 'Design',
-      itemDueDate: '02-17-21',
-      itemPriority: 'low',
-      itemCategory: 'Work',
-    },
-    {
-      itemName: 'Shopping',
-      itemDueDate: '01-02-21',
-      itemPriority: 'medium',
-      itemCategory: 'Personal',
-    },
-    {
-      itemName: 'Workout',
-      itemDueDate: '01-22-2021',
-      itemPriority: 'high',
-      itemCategory: 'Personal',
     },
   ];
 
@@ -46,6 +28,14 @@ export class HomePage {
       component: AddNewTaskPage,
     });
 
+    modal.onDidDismiss().then((newTaskObj) => {
+      this.todoList.push(newTaskObj.data);
+    });
+
     return await modal.present();
+  }
+
+  deleteTask(index) {
+    this.todoList.splice(index, 1);
   }
 }
