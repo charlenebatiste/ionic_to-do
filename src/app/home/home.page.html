@@ -27,22 +27,30 @@
         {{item.itemCategory}}
       </ion-card-subtitle>
       <ion-item>
-        <ion-label> ➢ {{item.itemName}}</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        <ion-label>{{item.itemName}}</ion-label>
       </ion-item>
     </ion-card-header>
 
-    <ion-card-content>
+    <ion-card-content style="text-align: end; padding-bottom: 0">
       <ion-label>Due {{item.itemDueDate | date:'fullDate'}}</ion-label>
     </ion-card-content>
 
-    <ion-row>
+    <ion-row
+      style="
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      "
+    >
       <ion-item>
         <ion-icon name="checkmark-outline"></ion-icon>
         <p>Completed</p>
       </ion-item>
 
       <ion-item (click)="deleteTask(i)">
-        <ion-icon name="trash-outline"></ion-icon>
+        <ion-icon name="trash-bin-outline"></ion-icon>
         <p>Cancel</p>
       </ion-item>
     </ion-row>
