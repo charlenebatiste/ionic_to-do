@@ -3,5 +3,6 @@ ion-header {
 }
 
 ion-content {
-  --background: linear-gradient(135deg, #78c0f0 30%, #c0d8f0 100%);
+  --background: linear-gradient(135deg, #78c0f0 20%, #c0d8f0 100%);
+  //   --background: url(../../assets/app_background.jpg), cover;
 }
